@@ -1,0 +1,304 @@
+<interface>
+<!-- 
+*************************************************************************
+Version = '0.0.0';
+*************************************************************************
+-->  
+        <name>Get Interface Traffic Information</name>
+		<script_path>|path_cacti|/scripts/ss_Alcatel_Sap_Index.php</script_path>
+		<script_function>ss_Alcatel_Sap_Index</script_function>
+		<script_server>php</script_server>
+		<arg_prepend>|host_hostname| |host_id| |host_snmp_version|:|host_snmp_port|:|host_snmp_timeout|:|host_ping_retries|:|host_max_oids|:|host_snmp_community|:|host_snmp_username|:|host_snmp_password|:|host_snmp_auth_protocol|:|host_snmp_priv_passphrase|:|host_snmp_priv_protocol|:|host_snmp_context|</arg_prepend>
+        <arg_index>index</arg_index>
+        <arg_query>query</arg_query>
+        <arg_get>get</arg_get>
+		<arg_num_indexes>num_indexes</arg_num_indexes>
+        <output_delimeter>!</output_delimeter>
+        <index_order>ifIndex</index_order>
+        <index_order_type>numeric</index_order_type>
+        <index_title_format>|chosen_order_field|</index_title_format>
+        <fields>
+                <ifIndex>
+                        <name>SAP Index</name>
+                        <direction>input</direction>
+                        <query_name>index</query_name>
+                </ifIndex>
+                
+                <sapPortId>
+                        <name>SAP PortId</name>
+                        <direction>input</direction>
+                        <query_name>sapPortId</query_name>
+                </sapPortId>
+                
+                <svcId>
+                        <name>Service ID</name>
+                        <direction>input</direction>
+                        <query_name>svcId</query_name>
+                </svcId>
+                
+                <svcType>
+                        <name>Service Type</name>
+                        <direction>input</direction>
+                        <query_name>svcType</query_name>
+                </svcType>
+                
+                <svcDescription>
+                        <name>Service Description</name>
+                        <direction>input</direction>
+                        <query_name>svcDescription</query_name>
+                </svcDescription>
+                
+                <sapType>
+                        <name>SAP Type</name>
+                        <direction>input</direction>
+                        <query_name>sapType</query_name>
+                </sapType>
+                
+                <sapOperStatus>
+                        <name>SAP OperStatus</name>
+                        <direction>input</direction>
+                        <query_name>sapOperStatus</query_name>
+                </sapOperStatus>
+                
+                <sapDescription>
+                        <name>SAP Description</name>
+                        <direction>input</direction>
+                        <query_name>sapDescription</query_name>
+                </sapDescription>
+                
+<!-- 
+*************************************************************************
+
+*************************************************************************
+-->  
+
+
+<!-- 
+*************************************************************************
+	Values to rrd files:	sapBaseStats Calculated Values
+*************************************************************************
+--> 
+                <sapBaseStatsIngressQchipForwardedTotalProfOctets>
+                        <name>Bytes In Total CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipForwardedTotalProfOctets</query_name>
+                </sapBaseStatsIngressQchipForwardedTotalProfOctets>
+				
+                <sapBaseStatsEgressQchipForwardedTotalProfOctets>
+                        <name>Bytes Out Total CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipForwardedTotalProfOctets</query_name>
+                </sapBaseStatsEgressQchipForwardedTotalProfOctets>
+
+
+<!-- 
+*************************************************************************
+	Values to rrd files:	sapBaseStats Direct Values
+*************************************************************************
+--> 
+                <sapBaseStatsIngressPchipDroppedPackets>
+                        <name>Packet Loss</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipDroppedPackets</query_name>
+                </sapBaseStatsIngressPchipDroppedPackets>
+				
+                <sapBaseStatsIngressPchipDroppedOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipDroppedOctets</query_name>
+                </sapBaseStatsIngressPchipDroppedOctets>
+				
+                <sapBaseStatsIngressPchipOfferedHiPrioPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedHiPrioPackets</query_name>
+                </sapBaseStatsIngressPchipOfferedHiPrioPackets>
+				
+                <sapBaseStatsIngressPchipOfferedHiPrioOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedHiPrioOctets</query_name>
+                </sapBaseStatsIngressPchipOfferedHiPrioOctets>
+				
+                <sapBaseStatsIngressPchipOfferedLoPrioPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedLoPrioPackets</query_name>
+                </sapBaseStatsIngressPchipOfferedLoPrioPackets>
+				
+                <sapBaseStatsIngressPchipOfferedLoPrioOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedLoPrioOctets</query_name>
+                </sapBaseStatsIngressPchipOfferedLoPrioOctets>
+				
+                <sapBaseStatsIngressQchipDroppedHiPrioPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipDroppedHiPrioPackets</query_name>
+                </sapBaseStatsIngressQchipDroppedHiPrioPackets>
+				
+                <sapBaseStatsIngressQchipDroppedHiPrioOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipDroppedHiPrioOctets</query_name>
+                </sapBaseStatsIngressQchipDroppedHiPrioOctets>
+				
+                <sapBaseStatsIngressQchipDroppedLoPrioPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipDroppedLoPrioPackets</query_name>
+                </sapBaseStatsIngressQchipDroppedLoPrioPackets>
+				
+                <sapBaseStatsIngressQchipDroppedLoPrioOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipDroppedLoPrioOctets</query_name>
+                </sapBaseStatsIngressQchipDroppedLoPrioOctets>
+				
+                <sapBaseStatsIngressQchipForwardedInProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipForwardedInProfPackets</query_name>
+                </sapBaseStatsIngressQchipForwardedInProfPackets>
+				
+                <sapBaseStatsIngressQchipForwardedInProfOctets>
+                        <name>Bytes In below CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipForwardedInProfOctets</query_name>
+                </sapBaseStatsIngressQchipForwardedInProfOctets>
+				
+                <sapBaseStatsIngressQchipForwardedOutProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipForwardedOutProfPackets</query_name>
+                </sapBaseStatsIngressQchipForwardedOutProfPackets>
+				
+                <sapBaseStatsIngressQchipForwardedOutProfOctets>
+                        <name>Bytes In above CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressQchipForwardedOutProfOctets</query_name>
+                </sapBaseStatsIngressQchipForwardedOutProfOctets>
+				
+                <sapBaseStatsEgressQchipDroppedInProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipDroppedInProfPackets</query_name>
+                </sapBaseStatsEgressQchipDroppedInProfPackets>
+				
+                <sapBaseStatsEgressQchipDroppedInProfOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipDroppedInProfOctets</query_name>
+                </sapBaseStatsEgressQchipDroppedInProfOctets>
+				
+                <sapBaseStatsEgressQchipDroppedOutProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipDroppedOutProfPackets</query_name>
+                </sapBaseStatsEgressQchipDroppedOutProfPackets>
+				
+                <sapBaseStatsEgressQchipDroppedOutProfOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipDroppedOutProfOctets</query_name>
+                </sapBaseStatsEgressQchipDroppedOutProfOctets>
+				
+                <sapBaseStatsEgressQchipForwardedInProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipForwardedInProfPackets</query_name>
+                </sapBaseStatsEgressQchipForwardedInProfPackets>
+				
+                <sapBaseStatsEgressQchipForwardedInProfOctets>
+                        <name>Bytes Out below CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipForwardedInProfOctets</query_name>
+                </sapBaseStatsEgressQchipForwardedInProfOctets>
+				
+                <sapBaseStatsEgressQchipForwardedOutProfPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipForwardedOutProfPackets</query_name>
+                </sapBaseStatsEgressQchipForwardedOutProfPackets>
+				
+                <sapBaseStatsEgressQchipForwardedOutProfOctets>
+                        <name>Bytes Out above CIR</name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsEgressQchipForwardedOutProfOctets</query_name>
+                </sapBaseStatsEgressQchipForwardedOutProfOctets>
+				
+                <sapBaseStatsCustId>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsCustId</query_name>
+                </sapBaseStatsCustId>
+				
+                <sapBaseStatsIngressPchipOfferedUncoloredPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedUncoloredPackets</query_name>
+                </sapBaseStatsIngressPchipOfferedUncoloredPackets>
+				
+                <sapBaseStatsIngressPchipOfferedUncoloredOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressPchipOfferedUncoloredOctets</query_name>
+                </sapBaseStatsIngressPchipOfferedUncoloredOctets>
+				
+                <sapBaseStatsAuthenticationPktsDiscarded>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsAuthenticationPktsDiscarded</query_name>
+                </sapBaseStatsAuthenticationPktsDiscarded>
+				
+                <sapBaseStatsAuthenticationPktsSuccess>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsAuthenticationPktsSuccess</query_name>
+                </sapBaseStatsAuthenticationPktsSuccess>
+				
+                <sapBaseStatsLastClearedTime>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsLastClearedTime</query_name>
+                </sapBaseStatsLastClearedTime>
+				
+                <sapBaseStatsIngressCPMPackets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMPackets</query_name>
+                </sapBaseStatsIngressCPMPackets>
+				
+                <sapBaseStatsIngressCPMPacketsHi>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMPacketsHi</query_name>
+                </sapBaseStatsIngressCPMPacketsHi>
+				
+                <sapBaseStatsIngressCPMPacketsLo>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMPacketsLo</query_name>
+                </sapBaseStatsIngressCPMPacketsLo>
+				
+                <sapBaseStatsIngressCPMOctets>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMOctets</query_name>
+                </sapBaseStatsIngressCPMOctets>
+				
+                <sapBaseStatsIngressCPMOctetsHi>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMOctetsHi</query_name>
+                </sapBaseStatsIngressCPMOctetsHi>
+				
+                <sapBaseStatsIngressCPMOctetsLo>
+                        <name></name>
+                        <direction>output</direction>
+                        <query_name>sapBaseStatsIngressCPMOctetsLo</query_name>
+                </sapBaseStatsIngressCPMOctetsLo>
+
+        </fields>
+</interface>
